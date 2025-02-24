@@ -42,7 +42,7 @@ function main() {
         gameLogic(promptUser());
         // ex. pc: 1, cc: 0, rc: 2    
     }
-    alert("Game Over!\nPlayer: " + playerCounter + "\tComputer: " + computerCounter);
+    alert("Game Over!\nPlayer: " + playerCounter + "\tComputer: " + computerCounter + "\nWinner: " + declareWinner());
 }
 
 main();
@@ -102,4 +102,15 @@ So this code will randomly generate one of three numbers: 1, 2, or 3, with equal
         alert("Round " + roundCounter + " Score:\nPlayer: " + playerCounter + "\tComputer: " + computerCounter);
         roundCounter++;    
     }
+}
+
+function declareWinner() {
+    if (playerCounter > computerCounter) {
+        winner = "Player";
+    } else if (computerCounter < playerCounter) {
+        winner = "Computer";
+    } else {
+        winner = "Tie!"
+    }
+    return winner;
 }
